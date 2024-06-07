@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.HavaDurumu"
+             Title="HavaDurumu">
+    <ScrollView>
+        <StackLayout Padding="20">
+            <Button Text="Şehir Ekle" BackgroundColor="CornflowerBlue"  HorizontalOptions="Center" FontAttributes="Bold"  Clicked="OnAddCityButtonClicked" />
+            <CollectionView x:Name="CitiesCollectionView" Margin="0,20,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Image Source="{Binding Source}" HeightRequest="150" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

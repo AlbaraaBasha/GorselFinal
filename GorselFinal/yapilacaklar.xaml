@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.yapilacaklar"
+             Title="yapilacaklar">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ekle" IconImageSource="add.png" Clicked="OnAddClicked"/>
+        <ToolbarItem Text="yenile" IconImageSource="refresh.jpg" Clicked="OnRefreshClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Padding="20">
+
+        <StackLayout x:Name="taskForm" IsVisible="False" Padding="20" >
+            <Entry x:Name="titleEntry" Placeholder="Görev" Margin="5"/>
+            <Entry x:Name="descriptionEntry" Placeholder="Detay" Margin="5"/>
+            <DatePicker x:Name="datePicker" Margin="5"/>
+            <TimePicker x:Name="timePicker" Margin="5"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Tamam" BackgroundColor="GreenYellow" Clicked="OnSaveClicked" Margin="5"/>
+                <Button Text="İptal" BackgroundColor="PaleVioletRed" Clicked="OnCancelClicked" Margin="5"/>
+            </StackLayout>
+        </StackLayout>
+
+
+        <ListView x:Name="taskListView" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="10">
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox IsChecked="{Binding IsCompleted}" CheckedChanged="OnTaskCheckedChanged"/>
+                                <Label Text="{Binding Title}" FontSize="20" VerticalOptions="Center" />
+                            </StackLayout>
+                            <Label Text="{Binding Description}" FontSize="15" Margin="3"/>
+                            <Label Text="{Binding Date}" FontSize="12"/>
+                            <Label Text="{Binding Time}" FontSize="12"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                <Button Text="Düzenle" Clicked="OnModifyClicked" BackgroundColor="GreenYellow" Margin="5" />
+                                <Button Text="Sil" Clicked="OnDeleteClicked" BackgroundColor="PaleVioletRed" Margin="5" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

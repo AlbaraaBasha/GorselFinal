@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.MainPage">
+
+    <VerticalStackLayout VerticalOptions="Start" HorizontalOptions="Center" Spacing="30" Margin="70" >
+        <Label Text="Merhaba." FontSize="Title" TextColor="BurlyWood" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+
+        <Frame CornerRadius="15">
+            <StackLayout>
+
+                <StackLayout x:Name="loginEkran" Spacing="10" IsVisible="True">
+                    <Label Text="Giriş yap"  FontAttributes="Bold" FontSize="25" HorizontalTextAlignment="Center" Margin="15" HeightRequest="30" WidthRequest="300" />
+
+                    <Entry x:Name="txtEmail"    Placeholder="E-posta" TextColor="Black"  Keyboard="Email" Margin="5"  />
+                    <Entry x:Name="txtPassword" Placeholder="şifre" TextColor="Black" IsPassword="True" Margin="5" />
+
+                    <Button Text="Oturum Aç" Clicked="LoginInClicked"  BackgroundColor="LightGreen" FontSize="17" FontAttributes="Bold"/>
+                    <Button Text="Hesabım Yok" BackgroundColor="Transparent" TextColor="DarkKhaki" FontAttributes="Bold" FontSize="12" Clicked="KayitLoginEkraniGoster"/>
+                </StackLayout>
+
+                <StackLayout x:Name="kayitEkran" Spacing="20" IsVisible="False">
+                    <Label Text="Kaydol"   FontSize="25" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="5" HeightRequest="50" WidthRequest="300"/>
+
+                    <Entry x:Name="txtName"      Placeholder="Kullanıcı Adı" TextColor="Black" />
+                    <Entry x:Name="txtREmail"    Placeholder="E-posta" TextColor="Black"  Keyboard="Email" />
+                    <Entry x:Name="txtRPassword" Placeholder="Şifre" TextColor="Black" IsPassword="True" />
+
+                    <Button Text="Kaydol"  Clicked="RegisterClicked" FontAttributes="Bold" FontSize="20" BackgroundColor="LightSeaGreen"/>
+                    <Button Text="Zaten bir hesabım var" BackgroundColor="Transparent" FontAttributes="Bold" TextColor="DarkKhaki" FontSize="12" Clicked="KayitLoginEkraniGoster"/>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </VerticalStackLayout>
+
+</ContentPage>

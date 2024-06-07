@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GorselFinal.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GorselFinal"
+    Shell.FlyoutBehavior="Flyout"
+    Title="GorselFinal">
+
+    <ShellContent
+        Title="Ana Sayfa"
+        Icon="home.jpg"
+        ContentTemplate="{DataTemplate local:AnaSayfa}"
+        Route="Ana Sayfa" />
+
+    <ShellContent
+        Title="Döviz"
+        Icon="doviz.png"
+        ContentTemplate="{DataTemplate local:Doviz}"
+        Route="Döviz" />
+
+    <ShellContent
+        Title="Haberler"
+        Icon="news.jpg"
+        ContentTemplate="{DataTemplate local:NewsPage}"
+        Route="Haberler" />
+
+    <ShellContent
+        Title="Hava Durumu"
+        Icon="hava.png"
+        ContentTemplate="{DataTemplate local:HavaDurumu}"
+        Route="Hava Durumu" />
+
+    <ShellContent
+        Title="Yapılacaklar"
+        Icon="task.jpg"
+        ContentTemplate="{DataTemplate local:yapilacaklar}"
+        Route="Yapılacaklar" />
+
+    <ShellContent
+        Title="Ayarlar"
+        Icon="ayarlar.jpg"
+        ContentTemplate="{DataTemplate local:ayarlar}"
+        Route="Ayarlar" />
+
+
+</Shell>

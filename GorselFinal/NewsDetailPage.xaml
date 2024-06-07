@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GorselFinal.NewsDetailPage"
+             Title="NewsDetailPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Paylaş" IconImageSource="share.png" Order="Primary" Clicked="ShareClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <WebView x:Name="webView"/>
+
+</ContentPage>
