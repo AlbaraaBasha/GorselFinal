@@ -21,7 +21,7 @@ namespace GorselFinal
 
         private async void OnAddClicked(object sender, EventArgs e)
         {
-            // Show the add task form
+           
             taskForm.IsVisible = true;
             taskListView.IsVisible = false;
             selectedTask = null;
@@ -95,17 +95,17 @@ namespace GorselFinal
 
             await DisplayAlert("Başarılı", "Görev başarıyla kaydedildi", "Tamam");
 
-            // Hide the add task form and show the task list
+           
             taskForm.IsVisible = false;
             taskListView.IsVisible = true;
 
-            // Refresh the task list
+           
             await LoadTasks();
         }
 
         private void OnCancelClicked(object sender, EventArgs e)
         {
-            // Hide the add task form and show the task list
+            
             taskForm.IsVisible = false;
             taskListView.IsVisible = true;
         }
@@ -142,7 +142,7 @@ namespace GorselFinal
                 {
                     await firebaseService.DeleteTask(task);
                     await DisplayAlert("Başarılı", "Görev silindi.", "Tamam");
-                    // Refresh the task list
+                    
                     await LoadTasks();
                 }
             }
